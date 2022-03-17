@@ -32,16 +32,14 @@ with open(args.datafile, 'r') as datafile:
                 first_sentence = line
         if len(first_sentence) < 15:
             continue
+        first_sentence.replace("\n", "  ")
+        remaining_text.replace("\n", "  ")
         first_sentence = first_sentence.strip()
         remaining_text = remaining_text.strip()
         sourcelines.append(first_sentence)
         targetlines.append(remaining_text)
-        print(paragraph)
-        print("\n\n")
-        print(first_sentence)
-        print("\n\n")
-        print(remaining_text)
-        print("\n\n")
-        print("-" * 40)
-        print("\n\n")
+        with open('output_data.src', "w") as sourcefile:
+            sourcefile.writelines(sourcelines)
+        with open('output_data.tgt', "w") as targetfile:
+            targetfile.writelines(targetlines)
 
