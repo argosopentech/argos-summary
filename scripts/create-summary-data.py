@@ -36,8 +36,8 @@ with open(args.datafile, 'r') as datafile:
         remaining_text.replace("\n", "  ")
         first_sentence = first_sentence.strip()
         remaining_text = remaining_text.strip()
-        sourcelines.append(first_sentence)
-        targetlines.append(remaining_text)
+        sourcelines.append(first_sentence + "\n")
+        targetlines.append(remaining_text + "\n")
         with open('output_data.src', "w") as sourcefile:
             sourcefile.writelines(sourcelines)
         with open('output_data.tgt', "w") as targetfile:
