@@ -32,8 +32,8 @@ with open(args.datafile, 'r') as datafile:
                 first_sentence = line
         if len(first_sentence) < 15:
             continue
-        first_sentence.replace("\n", "  ")
-        remaining_text.replace("\n", "  ")
+        first_sentence = first_sentence.replace("\n", "  ")
+        remaining_text = remaining_text.replace("\n", "  ")
         first_sentence = first_sentence.strip()
         remaining_text = remaining_text.strip()
         sourcelines.append(first_sentence + "\n")
